@@ -1,0 +1,16 @@
+import tweepy
+from textblob import TextBlob
+
+consumer_key= 'ggKYvKxjiv1hJdTEOhvafOUC1'
+consumer_secret= 'WxKMjEqMUokulvXnwFTjP3H2iO2St6sJ5ewNuizFCHKPFzCiYa'
+
+access_token='55520610-M8n4AVd5ZgjOdkfUxCgbYjt24JxNlhuChp3g1U0lM'
+access_token_secret='cSGO3FoD6aflMHNX9eAiPvmgFRv87FIPhCmyjUaKfYGIV'
+
+api = tweepy.API(auth)
+public_tweets = api.search('Nadal')
+for tweet in public_tweets:
+    print(tweet.text)
+    analysis = TextBlob(tweet.text)
+    print(analysis.sentiment)
+    print("")
